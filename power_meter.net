@@ -1,0 +1,30 @@
+* C:\Users\Romain Vitrat\Documents\Travaux personnels\Elec\PowerMeter\power_meter.asc
+V2 AC+ 0 SINE(0 325 50)
+C3 N001 AC+ 2µ
+R4 N002 N001 200
+D5 0 N002 BZX84C6V2L
+C4 0 V_out 2000µ
+D1 N002 V_out D
+R2 AC+ 0 100
+R3 AC+ N006 500k
+R5 N006 0 100
+Q1 N003 N007 N008 0 NPN
+R6 N007 0 2k
+R7 V_out_th N007 4k
+R8 V_out_th N003 8265
+R9 N008 0 1800
+C1 N007 N006 100µ
+V1 V_out_th 0 3.3
+XU1 N003 N005 V_out_th 0 N004 level.2 Avol=1Meg GBW=10Meg Slew=10Meg ilimit=25m rail=0 Vos=0 phimargin=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+R11 V_out_th N005 10k
+R12 N005 0 10k
+R1 N004 N005 20k
+.model D D
+.lib C:\Users\Romain Vitrat\Documents\LTspiceXVII\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\Users\Romain Vitrat\Documents\LTspiceXVII\lib\cmp\standard.bjt
+.tran 0 2 0 100u
+.lib UniversalOpamps2.sub
+.backanno
+.end
